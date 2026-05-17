@@ -1,18 +1,18 @@
-import SearchBar from "./components/SearchBar"
-import MovieList from "./components/MovieList"
-import { useState } from "react"
+import Favorites from "./Pages/Favorites"
+import Home from "./Pages/Home"
+import NavBar from "./components/NavBar"
+import { Routes, Route } from "react-router-dom"
 
 function App() {
  
 
-  const [movies, setMovies] = useState([])
-
   return (
     <>
-    <h1>Your movie finder</h1>
-    <SearchBar setMovies={setMovies}/>
-    <MovieList movies={movies}/>
-
+    <NavBar />
+    <Routes>
+<Route path="/" element={<Home />} />
+<Route path="/favorites" element={<Favorites />}/>
+    </Routes>
     </>
   )
 }

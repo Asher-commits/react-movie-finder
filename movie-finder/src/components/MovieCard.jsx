@@ -1,12 +1,12 @@
 
-function MovieCard({ props }){
+function MovieCard({ movie }){
 
     return(
         <>
-        <img src={props.Poster} alt={props.Title} />
-            <h3>{props.Title}</h3>
-            <h5>{props.Year}</h5>
-
+        <img src={movie.Poster} alt={movie.Title}/>
+        <h3>{movie.Title}</h3>
+        <p>{movie.Released}</p>
+        
         </>
     )
 }
