@@ -1,12 +1,30 @@
 
+function Favorites({ favorites, removeFromFavorites }) {
 
-function Favorites(){
+   return (
+      <>
+         <h1>Favorites</h1>
 
-   return(
-    <>
-    <h2>No favorite movies yet</h2>
-    <p>Start adding movies to your favorites and they will appear hear</p>
-    </>
+         {favorites.length === 0 ? (
+            <p>No favorite movies yet</p>
+         ) : (
+            favorites.map((movie) => (
+               <div key={movie.imdbID}>
+
+                  <img
+                     src={movie.Poster}
+                     alt={movie.Title}
+                  />
+
+                  <h3>{movie.Title}</h3>
+
+                  <p>{movie.Year}</p>
+                  <button onClick={() => removeFromFavorites(movie.imdbID)}>Remove</button>
+
+               </div>
+            ))
+         )}
+      </>
    )
 }
 
